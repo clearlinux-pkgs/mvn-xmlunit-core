@@ -4,13 +4,16 @@
 #
 Name     : mvn-xmlunit-core
 Version  : 2.2.1
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-core/2.2.1/xmlunit-core-2.2.1.jar
 Source0  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-core/2.2.1/xmlunit-core-2.2.1.jar
 Source1  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-core/2.2.1/xmlunit-core-2.2.1.pom
-Source2  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-matchers/2.2.1/xmlunit-matchers-2.2.1.jar
-Source3  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-matchers/2.2.1/xmlunit-matchers-2.2.1.pom
-Source4  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-parent/2.2.1/xmlunit-parent-2.2.1.pom
+Source2  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.jar
+Source3  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.pom
+Source4  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-matchers/2.2.1/xmlunit-matchers-2.2.1.jar
+Source5  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-matchers/2.2.1/xmlunit-matchers-2.2.1.pom
+Source6  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-parent/2.2.1/xmlunit-parent-2.2.1.pom
+Source7  : https://repo1.maven.org/maven2/org/xmlunit/xmlunit-parent/2.5.1/xmlunit-parent-2.5.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -28,24 +31,34 @@ data components for the mvn-xmlunit-core package.
 
 
 %prep
+%setup -q -n META-INF
 
 %build
 
 %install
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.2.1
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.2.1
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.2.1/xmlunit-core-2.2.1.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.2.1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.2.1
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.2.1/xmlunit-core-2.2.1.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.5.1
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.5.1
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-matchers/2.2.1
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-matchers/2.2.1
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-matchers/2.2.1/xmlunit-matchers-2.2.1.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-matchers/2.2.1
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-matchers/2.2.1
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-matchers/2.2.1/xmlunit-matchers-2.2.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-parent/2.2.1
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-parent/2.2.1
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-parent/2.2.1/xmlunit-parent-2.2.1.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-parent/2.5.1
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-parent/2.5.1/xmlunit-parent-2.5.1.pom
 
 
 %files
@@ -55,6 +68,9 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/xmlunit/xmlunit-par
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.2.1/xmlunit-core-2.2.1.jar
 /usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.2.1/xmlunit-core-2.2.1.pom
+/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.jar
+/usr/share/java/.m2/repository/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.pom
 /usr/share/java/.m2/repository/org/xmlunit/xmlunit-matchers/2.2.1/xmlunit-matchers-2.2.1.jar
 /usr/share/java/.m2/repository/org/xmlunit/xmlunit-matchers/2.2.1/xmlunit-matchers-2.2.1.pom
 /usr/share/java/.m2/repository/org/xmlunit/xmlunit-parent/2.2.1/xmlunit-parent-2.2.1.pom
+/usr/share/java/.m2/repository/org/xmlunit/xmlunit-parent/2.5.1/xmlunit-parent-2.5.1.pom
